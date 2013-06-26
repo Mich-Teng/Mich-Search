@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="blank_lines"></div>
+<div class="container">
+	<div class="hero-unit">
+		<div class="row">
+			<div class="span4 offset4">
+				<h4> Thanks for your advice </h4>
+		</div>
+		<div class="blank_lines"></div>
+		<div class = "row">
+			<div class="span6 offset3">	
+				<h4> We will contact you as soon as possible </h4>
+				<div class="blank_lines"></div>
+				<h5 href="/index"> Click Here to return to the home page </h5>
+			</div>
+		</div>	
+	</div>
+</div>
+{% endblock %}

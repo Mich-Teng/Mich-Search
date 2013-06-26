@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="blank_lines"></div>
+<div class="blank_lines"></div>
+<div class="blank_lines"></div>
+
+
+<div class="row-fluid">
+	<div class="span2 offset1">
+		<h1 class="blue">Your Favorite </h1>	
+	</div>
+	
+	<div class = "span9">
+		{% for favor in favor_list %}
+			<a href="{{ url_prefix }}?q={{ favor }}&src=all&page=1"><input type="button" value="{{ favor }}" class="btn btn-large btn-primary"/></a>
+			{% endfor %}
+	<a href="/details"><input type="button" value="Modify Your Favorite" class="btn btn-large btn-primary"/></a>
+
+	</div>
+
+	 
+ </div>
+ <hr>
+
+
+ {% ifequal selected 1 %}
+<div class="row-fluid">
+	<div class="span2 offset1">
+		<h2 class="black"> Filters: </h2>
+	</div>
+	<div class="span5">
+		<div class="btn-group">
+			<button class="btn btn-large"><a href="{{ url_src_prefix }}&src=all&page=1"> All </a></button>
+			<button class="btn btn-large"><a href="{{ url_src_prefix }}&src=taobao&page=1"> TaoBao </a></button>
+			<button class="btn btn-large"><a href="{{ url_src_prefix }}&src=dangdang&page=1"> DangDang </a></button>
+			<button class="btn btn-large"><a href="{{ url_src_prefix }}&src=jingdong&page=1"> JingDong </a></button>
+			<button class="btn btn-large"><a href="{{ url_src_prefix }}&src=amazon&page=1"> Amazon </a></button>
+		</div>
+	</div>
+	<div class="span2 offset1">
+		<div class="bordered">
+			<h2 class="green">recommendations </div>
+		</div>
+	</div>
+</div>
+
+
+<div class="blank_lines"> </div>
+
+
+<div class="row-fluid">
+	<div class="span7 offset1" onload=initPager(100, 10, 'pager', GetList)>	
+		<hr>	
+		{% for item in item_list %}
+			{% ifequal item.item_layout 0 %}
+			<div class="row-fluid">
+			{% endifequal %}
+            			<div class="span3">
+					<a href = "{{ item.item_src}}"><img src ="{{ item.pic_src}}"  class="block-img"> </img></a>
+					<p class="namefont">{{ item.item_name }} </p>
+					<p class="pricefont"> price: RMB {{item.item_price}} </p>
+					<p class="srcfont"> from:{{ item.source }} </p>
+             
+				</div>
+			{% ifequal item.item_layout 3 %}
+				</div>
+			{% endifequal %}
+		{% endfor %}
+	</div>
+	<div class="span4">
+		
+		<div class="span10 offset1">
+			<div class="bordered1">
+				{% for item in item_list %}
+				{% ifequal item.item_layout 0 %}
+				<div class="row-fluid">
+					
+            				<div class="span8 offset2">
+						<a href = "{{ item.item_src}}"><img src ="{{ item.pic_src}}"  class="block-img"> </img></a>
+						<p class="namefont">{{ item.item_name }} </p>
+						<button class="btn btn-large"><a href="{{ item.item_src}}"> View Details </a></button>
+						<hr>
+						
+					</div>
+					
+				</div>
+				{% endifequal %}
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+
+
+</div>	
+
+<div class="blank_lines"> </div>
+<div class="blank_lines"> </div>
+
+<div class="row-fluid">
+	<div class="span10 offset1">
+		<div class="pagination pagination-large">
+		<ul>
+			{% if item_array.has_previous %}
+				<li><a href="{{url_page_prefix}}&page={{ item_array.previous_page_number }}">&laquo;</a></li>
+			{% endif %}
+			{% for p in page_range %}
+				{% ifequal p item_array.number %}
+					<li class="active"><a href="#">{{p}}</a></li>
+				{% else %}
+					<li ><a href="{{ url_page_prefix }}&page={{p}}" title="{{p}} page">{{p}}</a></li>
+				{% endifequal %}
+			{% endfor %}
+			{% if item_array.has_next %}
+				<li><a href="{{url_page_prefix}}&page={{ item_array.next_page_number }}">&raquo;</a></li>
+			{% endif %}			
+		</ul>
+		<p >[{{ item_array.number }}/{{ item_array.paginator.num_pages }} page]</p>
+		</div>
+	</div>       
+</div>
+
+{% endifequal %}
+{% endblock %}

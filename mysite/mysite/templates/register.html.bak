@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="blank_lines"></div>
+<div class="blank_lines"></div>
+<div class="container">
+<div id="signup" class="accounts-form row">
+
+    <div class="span10 offset2">
+        <h1>Sign up to MichSearch</h1>
+		<div class="blank_lines"></div>
+        <p class="note">By creating your Kippt account you agree to our 
+        <a href="/terms/" target="blank">Terms of Use</a> and <a href="/privacy/" target="blank">Privacy Policy</a>.</p>
+        
+    </div>
+	
+    <div class="span4 social offset2">
+        <div>
+        <form class="connect-button" name="login" method="post" action="/social/twitter/redirect/" id="twitter-connect-form">
+        <div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='O1c4Kla2xOHKUNfnjvowekDxR5KqGFQv' /></div>
+        
+          <input type="hidden" name="next" value="/welcome/" />
+        
+		<div class="blank_lines"></div>
+		<div class="blank_lines"></div>
+        <a href="#" onclick="$('#twitter-connect-form').submit(); return false;" class="btn" id="twitter_button"><i class="icon-twitter"></i>Sign up with Twitter</a>
+        </form>
+
+        <form class="connect-button" name="login" method="post" action="/social/facebook/redirect/" id="facebook-connect-form">
+        <div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='O1c4Kla2xOHKUNfnjvowekDxR5KqGFQv' /></div>
+        
+          <input type="hidden" name="next" value="/welcome/" />
+        
+        <a href="#" onclick="$('#facebook-connect-form').submit(); return false;" class="btn" id="facebook_button"><i class="icon-facebook"></i>Sign up with Facebook</a>
+        </form>
+        <p><small>Already have an account? <a href="/login/">Log in</a></small></p>
+        </div>
+    </div>
+    
+
+    <div class="span6">   
+        <form action="" method="POST" autocomplete="off" class="clearfix span4" id="auth-form"><div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='O1c4Kla2xOHKUNfnjvowekDxR5KqGFQv' /></div>
+		<div class="blank_lines"></div>
+            <h3>Sign up with email</h3>
+
+            <div>
+				{{ form.email.errors }}
+				{{ form.email }}
+             </div>
+ 
+			<div>
+				{{ form.user_name.errors }}
+				{{ form.user_name }} 
+			</div>
+
+			<div>
+				{{ form.password.errors }}
+				{{ form.password }} 
+			</div>
+
+            <div class="email_suggestion"></div>
+
+                
+       
+
+            <div class="action">
+                
+                    <input type="hidden" name="next" value="/welcome/" />
+                
+                <input type="submit" value="Create account" class="btn btn-green"/>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

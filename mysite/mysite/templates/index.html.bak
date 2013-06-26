@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit">
+        <h1>Mich Search</h1>
+        <p>This is an online searching system which aims to help you compare the price of a product between several e-commerce websites. Click button below to enjoy searching now!</p>
+        <p><a href="/search" class="btn btn-primary btn-large">Join searching &raquo;</a></p>
+      </div>
+
+	 <div class="row">
+		<div class="span6">
+			<h2> Supported  Websites: </h2>
+		</div>
+	</div>
+
+	<div class="blank_lines">
+	</div>
+
+	<div class="row">
+		<div class="span3">
+			<p><img src="/static/image/taobao.jpg" width="250" height="100"  > </p>
+		</div>
+		<div class="span3">
+			<p><img src="/static/image/dangdang.jpg" width="250" height="100" > </p>
+		</div>
+
+		<div class="span3">
+			<p><img src="/static/image/amazon_cn.jpg"  width="250" height="100"> </p>
+		</div>
+		<div class="span3">
+			<p><img src="/static/image/amazon_en.jpg"  width="250" height="100"> </p>
+		</div>
+	</div>
+
+	<div class="blank_lines">
+	</div>
+
+	<div class="row">
+	</div>
+
+	<div class="row">
+
+		<div class="span3">
+			<p><img src="/static/image/jingdong.jpg" width="250" height="100" > </p>
+		</div>
+	</div>
+
+	<div class="blank_lines">
+	</div>
+
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="span4">
+          <h2>Account</h2>
+          <p> You can create account and set your own interests in it, which may help us search the corresponding products regularly and provide you with more information in time. Click the button below to manage your account now!</p>
+          <p><a class="btn" href="#">Register Now &raquo;</a></p>
+        </div>
+        <div class="span4">
+          <h2>Tutorials</h2>
+          <p> You may still be confused with the service we provide. Here we offer a detailed introduction of our website. Click the button below to get started now!</p>
+          <p><a class="btn" href="#">View details &raquo;</a></p>
+       </div>
+        <div class="span4">
+          <h2>Forum</h2>
+          <p> Do you get some advise for the website? Do you want to share some particular experience in shopping with other customers? Join us and discuss what you are interested in in the forum. Click the button below to get started now! </p>
+          <p><a class="btn" href="#">View details &raquo;</a></p>
+        </div>
+      </div>
+
+      
+{% endblock %}

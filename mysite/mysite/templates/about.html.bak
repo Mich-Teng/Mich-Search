@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+	<div class="hero-unit">
+		<h1> About Mich Search </h1>
+		<h2>developer</h2>
+		<h4> Michael Teng </h4>
+		<div class="blank_lines"></div>
+		<h2> license </h2>
+		<h4> GNU/GPL </h4>
+		<h2> about </h2>
+		<h4> This is an online searching system which aims to help you compare the price of a product between several e-commerce websites. </h4> 
+
+	</div>
+</div>
+{% endblock %}

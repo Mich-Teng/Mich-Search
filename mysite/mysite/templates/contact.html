@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="back-image3">
+	<div class="blank_lines"></div>
+	<div class="blank_lines"></div>
+
+	<div class="container">
+		<p class="leader_header">
+		 Contact Me.
+		 </p> 
+		<div class="blank_lines"></div>
+		<div class="blank_lines"></div>
+		<div class="blank_lines"></div>
+		<div class="blank_lines"></div>
+
+		 {% if form.errors %}
+			<p style="color: red; font-size:30px;">
+			Please correct the error{{ form.errors|pluralize }} below.
+			</p>
+		{% endif %}
+
+		<form action="" method="post">
+		{% csrf_token %}
+			<div class="row">
+				<div class="span2">
+					<p class="author_info"> Message </p>
+				</div>
+			</div>
+			<div class="blank_lines"></div>
+			<div class="row">
+				<div class="span8 offset2">
+				
+				<div >
+					{{ form.subject.errors }}
+						<p class="contact_p1">Subject:</p>
+					{{ form.subject }}
+				</div>
+				<div >
+					{{ form.email.errors }}
+					<p class="contact_p1">Email:</p>
+					{{ form.email }}
+				</div>
+				<div >
+					{{ form.message.errors }}
+					<p class="contact_p1">Message</p>
+					{{ form.message }}
+				</div>
+				<input type="submit" value="Submit" class="btn btn-primary">
+			</div>
+			</div>
+
+		</form>
+		
+			<div class="row">
+				<div class="span2">
+					<div class="blank_lines"></div> 
+					<div class="blank_lines"></div>
+					<div class="blank_lines"></div>
+					<div class="blank_lines"></div>
+					<p class="author_info"> My Info </p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span6 offset2">
+					<li class="my_li2"> E-mail: MichZc.Teng@gmail.com</li>
+					<li class="my_li2"> Location: YuQuan Campus, HangZhou</li>
+					<li class="my_li2"> Tel: +8618768113906</li>
+					<li class="my_li2"> Skype : tbtc886</li>
+				</div>
+			</div>
+	</div>
+</div>
+
+
+
+
+{% endblock %}

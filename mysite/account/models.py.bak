@@ -1,0 +1,36 @@
+from django.db import models
+class AccountManager(models.Manager):
+	def insert(self,email,user_name,password):
+		account = self.create(Email=email,user_name=user_name,password=password)
+		return account
+
+class Account(models.Model):
+	name = models.CharField(max_length=30,blank=True,null=True)
+	Email = models.CharField(max_length=30)
+	user_name = models.CharField(max_length=50)
+	password = models.CharField(max_length=60)
+	city = models.CharField(max_length=60,blank=True,null=True)
+	province = models.CharField(max_length=50,blank=True,null=True)
+	country = models.CharField(max_length=50,blank=True,null=True)
+	description = models.CharField(max_length=300,blank=True,null=True)
+
+	objects = AccountManager()
+	def __unicode__(self):
+		return self.name
+	class Meta:
+		ordering=['name']
+
+
+class Favorite(models.Model):
+	user = models.ForeignKey(Account)
+	product_name = models.CharField(max_length=100)
+
+	def __unicode__(self):
+		return self.product_name
+
+	class Meta:
+		ordering = ['user']
+	
+
+
+# Create your models here.

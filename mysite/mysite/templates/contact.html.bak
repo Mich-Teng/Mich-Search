@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div class = "container">
+		<div class="hero-unit">
+			<h2> Board </h2>
+			
+			 {% if form.errors %}
+				<p style="color: red;">
+				Please correct the error{{ form.errors|pluralize }} below.
+				</p>
+			{% endif %}
+
+			<form action="" method="post">
+			{% csrf_token %}
+				<div class="row">
+				<div class="span2">
+				</div>
+				<div class="span8">
+				<div >
+					{{ form.subject.errors }}
+					<h4>Subject:</h4>
+					{{ form.subject }}
+				</div>
+				<div>
+					{{ form.email.errors }}
+					<h4>Email:</h4>
+					{{ form.email }}
+				</div>
+				<div>
+					{{ form.password.errors }}
+					<h4>Message</h4>
+					{{ form.password }}
+				</div>
+				<input type="submit" value="Submit">
+			</form>
+			<text_area>
+			</div>
+			</div>
+		</div>
+	</div>
+
+	</textarea>
+	<div class="container">
+		<div class="hero-unit">
+			<div class="row">
+				<div class="span6">
+				<h2> Contact Me </h2>
+				<div class="blank_lines"></div> 
+				<h4> E-mail: MichZc.Teng@gmail.com</h4>
+				<h4> Location: YuQuan Campus, HangZhou</h4>
+				<h4> Tel: +8618768113906</h4>
+				<h4> Skype : tbtc886</h4>
+				</div>
+				<div class="span4">
+					<p><img src="/static/image/myphoto.jpg" width="250" height="100" class="img-polaroid"></p>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

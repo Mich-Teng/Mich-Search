@@ -1,0 +1,23 @@
+#pager
+{
+    float:left;
+    width:600px;
+}
+#pager ul
+{
+    float:right;
+    list-style:none;
+}
+#pager ul li
+{
+    float:left;
+    border:1px solid #97C853;
+    margin:1px;
+    padding:1px 6px;
+    cursor:pointer;
+}
+.curLi
+{
+    background:#97C853;
+}
+

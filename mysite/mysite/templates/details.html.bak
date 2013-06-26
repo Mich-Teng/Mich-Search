@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="blank_lines"></div>
+<div class="container">
+      <!-- Main hero unit for a primary marketing message or call to action -->
+	  <div class="hero-unit">
+	  <h3> Please complete your personal information here. We will provide a better service to you if you complete the info as detailed as possible  </h3>
+	  </div>
+</div>
+
+<div class="container" STYLE="border-style:solid;border-width:5pt; border-color:black>
+   <div class="span6 ">
+		<form action="" method="POST" autocomplete="off" class="clearfix span4" id="auth-form"><div style='display:none'>
+
+		<div class="blank_lines"></div>
+            <h2>Personal Info</h2>
+			<div class="blank_lines"></div>
+
+            <div>
+				{{ form.name.errors }}
+				<h3> name </h3>
+				
+				{{ form.name }}
+             </div>
+ 
+			<div>
+				<h3> city </h3>
+				{{ form.city.errors }}
+				{{ form.city }} 
+			</div>
+
+			<div>
+				<h3> province </h3>
+				{{ form.province.errors }}
+				{{ form.province }} 
+			</div>
+
+			<div>
+				<h3> country </h3>
+				{{ form.country.errors }}
+				{{ form.country }} 
+			</div>
+
+			<div>
+				<h3> description </h3>
+				{{ form.description.errors }}
+				{{ form.description }} 
+			</div>
+		</div>
+	</div>
+</div>
+            <div class="email_suggestion"></div>
+
+                
+       
+
+            <div class="action">
+                
+                    <input type="hidden" name="next" value="/welcome/" />
+                
+                <input type="submit" value="Create account" class="btn btn-green"/>
+            </div>
+        </form>
+</div>
+</div>
+    
+
+    <div class="span6">   
+        <form action="" method="POST" autocomplete="off" class="clearfix span4" id="auth-form"><div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='O1c4Kla2xOHKUNfnjvowekDxR5KqGFQv' /></div>
+		<div class="blank_lines"></div>
+            <h3>Sign up with email</h3>
+
+            <div>
+				{{ form.email.errors }}
+				{{ form.email }}
+             </div>
+ 
+			<div>
+				{{ form.user_name.errors }}
+				{{ form.user_name }} 
+			</div>
+
+			<div>
+				{{ form.password.errors }}
+				{{ form.password }} 
+			</div>
+
+            <div class="email_suggestion"></div>
+
+                
+       
+
+            <div class="action">
+                
+                    <input type="hidden" name="next" value="/welcome/" />
+                
+                <input type="submit" value="Create account" class="btn btn-green"/>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
